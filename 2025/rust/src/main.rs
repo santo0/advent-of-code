@@ -1,14 +1,13 @@
-mod day_1;
-use day_1::solution::read_input;
-use day_1::solution::str_to_str_list;
-use day_1::solution::process_steps;
+use rust::common::utils::read_input;
+use rust::common::utils::str_to_str_list;
+use rust::day_1::solution::process_steps_b;
 
 fn main() {
     println!("Hello, world!");
-    let input: String = read_input("/home/user/GitHub/advent-of-code/2025/rust/.input/day_1.txt");
+    let input: String = read_input(".input/day_1.txt");
     //println!("{input}");
     let list = str_to_str_list(&input);
     //println!("{list:?}");
-    let sol = process_steps(list);
+    let sol = process_steps_b(list);
     println!("{sol:?}");
 }

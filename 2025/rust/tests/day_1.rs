@@ -1,6 +1,8 @@
+use rust::common::utils::str_to_str_list;
+use rust::day_1::solution::process_steps_a;
+use rust::day_1::solution::process_steps_b;
 
-
-const TEST_VAL: &str  = "L68
+const TEST_VAL: &str = r#"L68
 L30
 R48
 L5
@@ -9,15 +11,20 @@ L55
 L1
 L99
 R14
-L82";
+L82"#;
+        
+#[test]
+fn test_first_star(){
+    let binding = &TEST_VAL.to_string();
+    let list = str_to_str_list(binding);
+    let sol = process_steps_a(list);
+    assert_eq!(sol, (32, 3));
+}
 
-
-#[cfg(test)]
-mod tests{
-    use super::*;
-
-    #[test]
-    fn test_something(){
-        assert_eq!(1,1);
-    }
+#[test]
+fn test_second_star(){
+    let binding = &TEST_VAL.to_string();
+    let list = str_to_str_list(binding);
+    let sol = process_steps_b(list);
+    assert_eq!(sol, (32, 6));
 }
