@@ -9,7 +9,6 @@ pub fn read_input(path: &str) -> String {
     return data;
 }
 
-pub fn str_to_str_list(string: &String) -> Vec<&str> {
-    let parts = string.split("\n");
-    return parts.filter(|&x| x != "").collect::<Vec<&str>>();
+pub fn str_to_str_list<'a>(string: &'a str, sep: &str) -> Vec<&'a str> {
+    return string.split(sep).filter(|x| !x.is_empty()).collect();
 }
